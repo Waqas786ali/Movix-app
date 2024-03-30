@@ -1,0 +1,117 @@
+@import "../../mixins.scss";
+
+.searchResultsPage {
+    min-height: 700px;
+    padding-top: 100px;
+
+    .resultNotFound {
+        font-size: 24px;
+        color: var(--black-light);
+    }
+
+    .pageTitle {
+        font-size: 24px;
+        line-height: 34px;
+        color: white;
+        margin-bottom: 25px;
+    }
+
+    .content {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        margin-bottom: 50px;
+
+        @include md {
+            gap: 20px;
+        }
+
+        .movieCard {
+            .posterBlock {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .pag {
+        color: white;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 2rem;
+        position: relative;
+        height: 100px;
+
+        @media screen and (min-width:512px){
+            gap: 10px;
+        }
+
+        @include md {
+            gap: 10px;
+        }
+
+
+        span {
+            padding: 0.8rem 1rem;
+            background-color: var(--black3);
+            cursor: pointer;
+            display: none !important;
+            @media screen and (min-width:512px){
+                display: block !important;
+            }
+            @include md {
+                padding: 1rem 2rem;;
+            }
+        }
+
+        span:active {
+            transform: scale(0.8);
+        }
+
+        .span1 {
+            background: none !important;
+            cursor: auto;
+            display: block !important;
+        }
+        .active{
+            border: 1px solid lightgray !important;
+        }
+
+        .arrow2 {
+            font-size: 25px;
+            background: var(--black3) !important;
+            color: white !important;
+            cursor: pointer;
+            position: absolute;
+            @include md {
+                font-size: 35px;
+            }
+        }
+
+        .left {
+            left: 0%;
+
+            @media screen and (min-width:920px) {
+                left: 10%;
+            }
+
+        }
+
+        .right {
+            right: 0%;
+            @media screen and (min-width:920px) {
+                right: 10%;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .show {
+            display: block !important;
+        }
+    }
+}

@@ -1,0 +1,209 @@
+// CSS
+@import "../../mixins.scss";
+
+.explorePage {
+    min-height: 700px;
+    padding-top: 100px;
+
+    .resultNotFound {
+        font-size: 24px;
+        color: var(--black-light);
+    }
+
+    .pageHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        flex-direction: column;
+
+        @include md {
+            flex-direction: row;
+        }
+    }
+
+    .pageTitle {
+        font-size: 24px;
+        line-height: 34px;
+        color: white;
+        margin-bottom: 20px;
+
+        @include md {
+            margin-bottom: 0;
+        }
+    }
+
+    .filters {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+
+        @include md {
+            flex-direction: row;
+        }
+
+        .react-select-container {
+            &.genresDD {
+                width: 100%;
+
+                @include md {
+                    max-width: 500px;
+                    min-width: 250px;
+                }
+            }
+
+            &.sortbyDD {
+                width: 100%;
+                flex-shrink: 0;
+
+                @include md {
+                    width: 250px;
+                }
+            }
+
+            .react-select__control {
+                border: 0;
+                outline: 0;
+                box-shadow: none;
+                background-color: var(--black-light);
+                border-radius: 20px;
+
+                .react-select__value-container {
+
+                    .react-select__placeholder,
+                    .react-select__input-container {
+                        color: white;
+                        margin: 0 10px;
+                    }
+                }
+
+                .react-select__single-value {
+                    color: white;
+                }
+
+                .react-select__multi-value {
+                    background-color: var(--black3);
+                    border-radius: 10px;
+
+                    .react-select__multi-value__label {
+                        color: white;
+                    }
+
+                    .react-select__multi-value__remove {
+                        background-color: transparent;
+                        color: white;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: var(--black-lighter);
+                        }
+                    }
+                }
+            }
+
+            .react-select__menu {
+                top: 40px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        margin-bottom: 50px;
+
+        @include md {
+            gap: 20px;
+        }
+
+        .movieCard {
+            .posterBlock {
+                margin-bottom: 30px;
+            }
+        }
+
+        .pag {
+            color: white;
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 2rem;
+            position: relative;
+            height: 100px;
+    
+            @media screen and (min-width:512px){
+                gap: 10px;
+            }
+    
+            @include md {
+                gap: 10px;
+            }
+    
+    
+            span {
+                padding: 0.8rem 1rem;
+                background-color: var(--black3);
+                cursor: pointer;
+                display: none !important;
+                @media screen and (min-width:512px){
+                    display: block !important;
+                }
+                @include md {
+                    padding: 1rem 2rem;;
+                }
+            }
+    
+            span:active {
+                transform: scale(0.8);
+            }
+    
+            .span1 {
+                background: none !important;
+                cursor: auto;
+                display: block !important;
+            }
+            .active{
+                border: 1px solid lightgray !important;
+            }
+    
+            .arrow2 {
+                font-size: 25px;
+                background: var(--black3) !important;
+                color: white !important;
+                cursor: pointer;
+                position: absolute;
+                @include md {
+                    font-size: 35px;
+                }
+            }
+    
+            .left {
+                left: 0%;
+
+                @media screen and (min-width:920px) {
+                    left: 10%;
+                }
+    
+            }
+    
+            .right {
+                right: 0%;
+                @media screen and (min-width:920px) {
+                    right: 10%;
+                }
+            }
+
+            .hidden {
+                display: none !important;
+            }
+
+            .show {
+                display: block !important;
+            }
+        }
+    }
+}
